@@ -1,4 +1,4 @@
-/// Turns the three CSV exports into typed lines. Every row error names its file and line.
+/// Turns the 3 CSV exports into typed lines. Every row error names its file and line.
 public enum Loaders {
     static let bankColumns = ["posted_date", "bank_ref", "description", "amount"]
     static let processorColumns = ["payout_id", "payout_date", "line_type", "reference", "amount", "status"]

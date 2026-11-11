@@ -1,6 +1,6 @@
 import Foundation
 
-/// One data row, keyed by the header's column names.
+/// 1 data row, keyed by the header's column names.
 public struct CSVRecord {
     /// The physical line the record starts on (the header is line 1).
     public let line: Int

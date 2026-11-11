@@ -48,7 +48,7 @@ public enum PayoutMatcher {
             $0.description.uppercased().hasPrefix(processorPrefix) && $0.amountCents > 0
         }
 
-        // The bank feed sometimes delivers the same credit twice: keep one credit per payout.
+        // The bank feed sometimes delivers the same credit 2 times: keep 1 credit per payout.
         var byPayout: [String: BankLine] = [:]
         var withoutId: [BankLine] = []
         var unmatched: [String] = []

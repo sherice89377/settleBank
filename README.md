@@ -1,7 +1,7 @@
 # settleBank
 
 `settleBank` is the month-end cash reconciliation tool of Sherice's Coffee Roasters. It reads
-3 exports and writes one JSON close report:
+3 exports and writes 1 JSON close report:
 
 * `bank.csv`, the Bravo Bank operating account's statement export (`posted_date,bank_ref,description,amount`);
 * `processor.csv`, TangoPay's payout export, 1 row per line of each payout batch

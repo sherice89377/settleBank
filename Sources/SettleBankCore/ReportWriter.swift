@@ -1,6 +1,6 @@
 import Foundation
 
-/// Writes the close report as JSON (keys sorted, two-space indentation, a final newline).
+/// Writes the close report as JSON (keys sorted, 2-space indentation, a final newline).
 public enum ReportWriter {
     struct Document: Encodable {
         let payouts: [Payout]

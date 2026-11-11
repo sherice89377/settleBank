@@ -1,4 +1,4 @@
-/// One row of the bank statement export. Credits are positive, debits negative.
+/// 1 row of the bank statement export. Credits are positive, debits negative.
 public struct BankLine: Equatable {
     public let bankRef: String
     public let posted: Day
@@ -13,7 +13,7 @@ public enum LineType: String {
     case fee
 }
 
-/// One line of the processor's payout export. A payout's net is the sum of its lines.
+/// 1 line of the processor's payout export. A payout's net is the sum of its lines.
 public struct ProcessorLine: Equatable {
     public let payoutId: String
     public let payoutDate: Day
@@ -24,7 +24,7 @@ public struct ProcessorLine: Equatable {
     public let status: String
 }
 
-/// One row of the internal ledger. Amounts are positive for sales and for refunds.
+/// 1 row of the internal ledger. Amounts are positive for sales and for refunds.
 public struct LedgerEntry: Equatable {
     public enum Kind: String {
         case sale

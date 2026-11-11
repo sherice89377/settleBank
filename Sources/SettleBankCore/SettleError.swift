@@ -12,7 +12,7 @@ public enum SettleError: Error, Equatable, CustomStringConvertible {
         case .unreadable(let path):
             return "cannot read \(path)"
         case .invalidAmount(let text):
-            return "invalid amount '\(text)' (expected a decimal with exactly two fraction digits)"
+            return "invalid amount '\(text)' (expected a decimal with exactly 2 fraction digits)"
         case .invalidDate(let text):
             return "invalid date '\(text)' (expected YYYY-MM-DD)"
         case .malformedCSV(let line, let reason):

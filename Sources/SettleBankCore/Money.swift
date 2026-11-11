@@ -3,7 +3,7 @@ import Foundation
 /// Amounts are carried as integer cents end to end, so no total ever depends on
 /// floating-point rounding.
 public enum Money {
-    /// Parses "1234.56", "-0.50" or "+12.00" into cents. Exactly two fraction digits are required.
+    /// Parses "1234.56", "-0.50" or "+12.00" into cents. Exactly 2 fraction digits are required.
     public static func cents(_ raw: String) throws -> Int {
         var text = Substring(raw.trimmingCharacters(in: .whitespaces))
         var negative = false
