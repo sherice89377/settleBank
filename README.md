@@ -16,6 +16,14 @@ swift run settleBank reconcile --bank samples/2026-10/bank.csv \
 swift test
 ```
 
+Month after month, pass the same `--state` file to every close (it is created on the first run), so
+each close sees what the earlier ones received:
+
+```
+swift run settleBank reconcile --bank 2026-11/bank.csv --processor 2026-11/processor.csv \
+    --ledger 2026-11/ledger.csv --state out/close-state.json --out out/2026-11-close.json
+```
+
 Amounts are decimals with exactly 2 fraction digits and are carried as integer cents.
 Dates are `YYYY-MM-DD`.
 
@@ -28,5 +36,6 @@ Dates are `YYYY-MM-DD`.
 | `Sources/SettleBankCore/PayoutMatcher.swift` | Payouts against bank credits |
 | `Sources/SettleBankCore/RefundStatus.swift` | Whether each refund settled |
 | `Sources/SettleBankCore/LedgerCheck.swift` | Ledger entries the evidence does not support |
+| `Sources/SettleBankCore/CloseState.swift` | What 1 close hands to the next |
 | `Sources/SettleBankCore/ReportWriter.swift` | The JSON report |
 | `Sources/settleBank/main.swift` | The command line |
