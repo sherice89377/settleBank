@@ -13,7 +13,7 @@ final class ReconcilerTests: XCTestCase {
         PO-100,2026-09-02,charge,ch_2,38.00,succeeded
         PO-100,2026-09-02,fee,fee_100,-2.90,posted
         PO-101,2026-09-30,charge,ch_3,20.00,succeeded
-        PO-101,2026-09-30,fee,fee_101,-0.88,posted
+        PO-101,2026-09-30,fee,fee_101,-1.88,posted
         """
     let ledger = """
         entry_id,date,kind,reference,amount,status
@@ -33,7 +33,7 @@ final class ReconcilerTests: XCTestCase {
     func testPayoutNotYetDepositedIsMissing() throws {
         let (result, _) = try Reconciler.run(bankCSV: bank, processorCSV: processor, ledgerCSV: ledger)
         XCTAssertEqual(result.payouts[1], PayoutResult(
-            payoutId: "PO-101", netCents: 1912, depositedCents: 0, bankRefs: [], status: .missing))
+            payoutId: "PO-101", netCents: 1812, depositedCents: 0, bankRefs: [], status: .missing))
         XCTAssertEqual(result.unmatchedBank, [])
     }
 

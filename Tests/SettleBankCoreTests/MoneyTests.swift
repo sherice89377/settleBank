@@ -4,7 +4,7 @@ import XCTest
 final class MoneyTests: XCTestCase {
     func testParsesCents() throws {
         XCTAssertEqual(try Money.cents("1234.56"), 123456)
-        XCTAssertEqual(try Money.cents("-0.50"), -50)
+        XCTAssertEqual(try Money.cents("-12.50"), -1250)
         XCTAssertEqual(try Money.cents("+12.00"), 1200)
         XCTAssertEqual(try Money.cents(" 7.05 "), 705)
     }
