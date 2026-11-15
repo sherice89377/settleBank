@@ -36,7 +36,7 @@ public struct CloseState: Codable, Equatable {
     }
 
     /// Every close's exports, typed. A later bank export often restates rows the bank already sent;
-    /// the restated row replaces the earlier one, so each bank_ref appears once, as last sent.
+    /// the restated row replaces the earlier row, so each bank_ref appears 1 time, as last sent.
     public func history(warnings: inout [String]) throws -> (bank: [BankLine], processor: [ProcessorLine], ledger: [LedgerEntry]) {
         var bank: [BankLine] = []
         var position: [String: Int] = [:]
